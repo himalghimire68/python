@@ -6,5 +6,6 @@ c = string.replace(a, b)
 print(c.upper())
 '''
 
+# print("1\n2\n3\n4\n5")
 
 
