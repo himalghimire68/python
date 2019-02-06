@@ -5,7 +5,7 @@ def start_msg():
     num1 = int(input("Enter First number:"))
     num2= int(input("Enter Second Number:"))
     return op,num1,num2
-#calc(op,num1,num2)
+
 op, num1, num2= start_msg()
 
 
