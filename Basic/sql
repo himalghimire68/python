@@ -1,0 +1,16 @@
+1. Create user
+2. Access
+3. Connect
+4. Use database
+5. Drop
+
+/////
+
+1. Create User User_name identified by password;
+2. Grant dba to user_name;
+3. Conn User_name/password
+4. conn user_name @ aims;
+5. Drop user user_name cascade;
+
+//////////
+

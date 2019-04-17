@@ -24,11 +24,6 @@
 							</div>
 						</a> <!-- #branding -->
 
-
-
-
-
-
  <!--Search Button-->
 
 
@@ -46,37 +41,38 @@
 						<div class="mobile-navigation"></div>
 					</div>
 				</header>
+				{% if info%}
+
 				<main class="main-content">
 					<div class="container">
 						<div class="page">
-							<div class="row">
-
-							</div> <!-- .row -->
-							<div class="row">
-								<div class="col-sm-6 col-md-3">
-									<div class="latest-movie">
-										<a href="#"><img src="{{thumb}}" alt="Movie Photo"></a>
+							<h2>The First Result is as below. </h2>
+							<div class="row ">
+								<div class="col-md-3">
+									<div class="latest-movie ">
+										<a href="#"><img src="{{info.thumb}}"  width="200" alt="Movie Photo"></a>
 									</div>
 								</div>
-
-							</div> <!-- .row -->
-							<div class="row">
-							<div class="col-md-4">
-								<h2 class="section-title movie_photo">{{name}}</h2>
-								<p class="ratings">({{year}})</p>
-								<p class="ratings" style="font-size:25px; color:#44aa22;">{{rating}} </p>
-								<p class="ratings"> Director: {{director}}</p>
-								<p class="ratings"> Main character: {{maincharacter}},{{maincharacter1}}</p>
-								<p class="ratings"> Runtime:  {{runtime}} Minutes</p>
-
-								<ul class="movie-schedule">
-									<li>
-										<a href="https://www.youtube.com/results?search_query={{name}} " target="_blank">Watch Trailer</a>
-									</li>
-
-								</ul> <!-- .movie-schedule -->
+								<div class="col-md-7">
+									<h2 class="section-title movie_photo">{{info.name}}</h2>
+									<div class="ratings">
+										<p>({{info.year}})</p>
+										<p><style="font-size:25px; color:#44aa22;">{{info.rating}} </p>
+										<p> Director: {{info.director}}</p>
+										<p> Main character: {{info.maincharacter1}},{{info.maincharacter2}}</p>
+										<p> Runtime:  {{info.runtime}} Minutes</p>
+										<ul class="movie-schedule">
+											<li>
+												<a href="https://www.youtube.com/results?search_query={{info.name}}" target="_blank"><button>Watch Trailer</button></a>
+											</li>
+										</ul> <!-- .movie-schedule -->
+									</div>
+								</div>
+							{% else %}
+							{%endif%}
+							</div>
 						</div>
-					</div> <!-- .container -->
+					</div>
 				</main>
 			</div>
 		</form>
@@ -92,3 +88,5 @@
 	</body>
 
 </html>
+
+

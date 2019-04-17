@@ -15,7 +15,7 @@ insert_box.grid(row=1, column=0)
 insert_box.config(width=20, height=3, textvariable=insert_box_label, justify="right")
 '''
 name= StringVar
-Label(cal, text="Name:").grid(row=1,column=1)
+Label(cal).grid(row=1,column=1)
 name=Entry(cal,textvariable=name)
 name.grid(row=1,column=3,padx=(10),pady=(10))
 
@@ -67,32 +67,3 @@ sub.grid(row=6,column=5)
 cal.mainloop()
 
 
-
-
-
-
-
-
-'''
-inp_in()=StringVar()
-operator=""
-
-def click(numbers):
-    glbal operator
-    operator = operator+str(numbers)
-    inp_in.set(operator)
-
-def equal():
-    global operator
-    add=str(eval(operator))
-    inp_in.set(add)
-    operator=''
-
-def equal():
-    global operator
-    add=str(eval(operator))
-    inp_in.set(sub)
-    operator=''
-
-
-'''

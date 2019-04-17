@@ -1,173 +1,110 @@
+# from tkinter import *
+# import math
+#
+# class calc:
+# 	def getandreplace(self):
+# 		"""replace x with * and ÷ with /"""
+#
+# 		self.expression = self.e.get()
+# 		self.newtext=self.expression.replace(self.newdiv,'/')
+# 		self.newtext=self.newtext.replace('x','*')
+#
+# 	def equals(self):
+# 		"""when the equal button is pressed"""
+#
+# 		self.getandreplace()
+# 		try:
+# 			self.value= eval(self.newtext) #evaluate the expression using the eval function
+# 		except SyntaxError or NameErrror:
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,'Invalid Input!')
+# 		else:
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,self.value)
+#
+# 	def squareroot(self):
+# 		"""squareroot method"""
+#
+# 		self.getandreplace()
+# 		try:
+# 			self.value= eval(self.newtext) #evaluate the expression using the eval function
+# 		except SyntaxError or NameErrror:
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,'Invalid Input!')
+# 		else:
+# 			self.sqrtval=math.sqrt(self.value)
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,self.sqrtval)
+#
+# 	def square(self):
+# 		"""square method"""
+#
+# 		self.getandreplace()
+# 		try:
+# 			self.value= eval(self.newtext) #evaluate the expression using the eval function
+# 		except SyntaxError or NameErrror:
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,'Invalid Input!')
+# 		else:
+# 			self.sqval=math.pow(self.value,2)
+# 			self.e.delete(0,END)
+# 			self.e.insert(0,self.sqval)
+#
+# 	def clearall(self):
+# 		"""when clear button is pressed,clears the text input area"""
+# 		self.e.delete(0,END)
+#
+# 	def clear1(self):
+# 		self.txt=self.e.get()[:-1]
+# 		self.e.delete(0,END)
+# 		self.e.insert(0,self.txt)
+#
+# 	def action(self,argi):
+# 		"""pressed button's value is inserted into the end of the text area"""
+# 		self.e.insert(END,argi)
+#
+# 	def __init__(self,master):
+# 		"""Constructor method"""
+# 		master.title('Calulator')
+# 		master.geometry()
+# 		self.e = Entry(master)
+# 		self.e.grid(row=0,column=0,columnspan=6,pady=3)
+# 		self.e.focus_set() #Sets focus on the input text area
+#
+# 		self.div='÷'
+# 		self.newdiv=self.div.decode('utf-8')
+#
+# 		#Generating Buttons
+# 		Button(master,text="=",width=10,command=lambda:self.equals()).grid(row=4, column=4,columnspan=2)
+# 		Button(master,text='AC',width=3,command=lambda:self.clearall()).grid(row=1, column=4)
+# 		Button(master,text='C',width=3,command=lambda:self.clear1()).grid(row=1, column=5)
+# 		Button(master,text="+",width=3,command=lambda:self.action('+')).grid(row=4, column=3)
+# 		Button(master,text="x",width=3,command=lambda:self.action('x')).grid(row=2, column=3)
+# 		Button(master,text="-",width=3,command=lambda:self.action('-')).grid(row=3, column=3)
+# 		Button(master,text="÷",width=3,command=lambda:self.action(self.newdiv)).grid(row=1, column=3)
+# 		Button(master,text="%",width=3,command=lambda:self.action('%')).grid(row=4, column=2)
+# 		Button(master,text="7",width=3,command=lambda:self.action('7')).grid(row=1, column=0)
+# 		Button(master,text="8",width=3,command=lambda:self.action(8)).grid(row=1, column=1)
+# 		Button(master,text="9",width=3,command=lambda:self.action(9)).grid(row=1, column=2)
+# 		Button(master,text="4",width=3,command=lambda:self.action(4)).grid(row=2, column=0)
+# 		Button(master,text="5",width=3,command=lambda:self.action(5)).grid(row=2, column=1)
+# 		Button(master,text="6",width=3,command=lambda:self.action(6)).grid(row=2, column=2)
+# 		Button(master,text="1",width=3,command=lambda:self.action(1)).grid(row=3, column=0)
+# 		Button(master,text="2",width=3,command=lambda:self.action(2)).grid(row=3, column=1)
+# 		Button(master,text="3",width=3,command=lambda:self.action(3)).grid(row=3, column=2)
+# 		Button(master,text="0",width=3,command=lambda:self.action(0)).grid(row=4, column=0)
+# 		Button(master,text=".",width=3,command=lambda:self.action('.')).grid(row=4, column=1)
+# 		Button(master,text="(",width=3,command=lambda:self.action('(')).grid(row=2, column=4)
+# 		Button(master,text=")",width=3,command=lambda:self.action(')')).grid(row=2, column=5)
+# 		Button(master,text="√",width=3,command=lambda:self.squareroot()).grid(row=3, column=4)
+# 		Button(master,text="x²",width=3,command=lambda:self.square()).grid(row=3, column=5)
+# #Main
+# root = Tk()
+# obj=calc(root) #object instantiated
+# root.mainloop()
 
 
 
-from tkinter import *
-
-root=Tk()
-root.geometry("400x400")
-#root.title()
-title= Label(root,text='First', font=("",32))
-title.pack()
-name=StringVar()
-age=StringVar()
-Label(root, text="Name:").pack()
-name=Entry(root,textvariable=name)
-name.pack(padx=(10),pady=(10))
-Label(root, text="Enter Age")
-age=Entry(root,textvariable=age)
-age.pack(padx=(10))
-out=Label(root,text=" ")
-out.pack()
-
-
-
-sub=Button(root,text="Submit",command=lambda : print(name.get(),age.get()))
-sub.pack()
-
-root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-    This script was written in python 3.x.
-    In order to run this script, please make sure your python version is 3.x or above.
-    How to run:
-        python App.py
-    or if it doesn't work use this one:
-        python3 App.py
-    Author: Udin <just.udin@yahoo.com>
-'''
-
-'''
-from tkinter import *
-import tkinter.messagebox
-from tkinter.ttk import Frame, Label, Entry
-
-class App(Frame):
-    def __init__(self, parent):
-        Frame.__init__(self, parent)
-        self.parent = parent
-        self.initUI()
-
-    def initUI(self):
-        self.parent.title("Calculator by Udin")
-        self.pack(fill=BOTH, expand=True)
-        global value
-        value = 0
-        global num1
-        num1 = StringVar()
-        global num2
-        num2 = StringVar()
-        global res
-        res = StringVar()
-
-        frame1 = Frame(self)
-        frame1.pack(fill=X)
-
-        lbl1 = Label(frame1, text="Input Number 1 :", width=15)
-        lbl1.pack(side=LEFT, padx=5, pady=5)
-
-        entry1 = Entry(frame1,textvariable=num1)
-        entry1.pack(fill=X, padx=5, expand=True)
-
-        frame2 = Frame(self)
-        frame2.pack(fill=X)
-
-        lbl2 = Label(frame2, text="Input Number 2 :", width=15)
-        lbl2.pack(side=LEFT, padx=5, pady=5)
-
-        entry2 = Entry(frame2,textvariable=num2)
-        entry2.pack(fill=X, padx=5, expand=True)
-
-        frame3 = Frame(self)
-        frame3.pack(fill=X)
-
-        btnplus = Button(frame3, text="+", width=8, command=self.plus)
-        btnplus.pack(side=LEFT, anchor=N, padx=5, pady=5)
-
-        btnminus = Button(frame3, text="-", width=8, command=self.minus)
-        btnminus.pack(side=LEFT, anchor=N, padx=5, pady=5)
-
-        btnmul = Button(frame3, text="*", width=8, command=self.mul)
-        btnmul.pack(side=LEFT, anchor=N, padx=5, pady=5)
-
-        btndiv = Button(frame3, text="/", width=8, command=self.div)
-        btndiv.pack(side=LEFT, anchor=N, padx=5, pady=5)
-
-        frame4 = Frame(self)
-        frame4.pack(fill=X)
-
-        lbl3 = Label(frame4, text="Result :", width=10)
-        lbl3.pack(side=LEFT, padx=5, pady=5)
-
-        result = Entry(frame4,textvariable=res)
-        result.pack(fill=X, padx=5, expand=True)
-
-    def errorMsg(self,msg):
-        if msg == 'error':
-            tkinter.messagebox.showerror('Error!', 'Something went wrong! Maybe invalid entries')
-        elif msg == 'divisionerror':
-            tkinter.messagebox.showerror('Division Error', 'The value of input number 2 is 0. No dividing by 0')
-
-    def plus(self):
-        try:
-            value = float(num1.get()) + float(num2.get())
-            res.set(self.makeAsItIs(value))
-        except:
-            self.errorMsg('error')
-
-    def minus(self):
-        try:
-            value = float(num1.get()) - float(num2.get())
-            res.set(self.makeAsItIs(value))
-        except:
-            self.errorMsg('error')
-
-    def mul(self):
-        try:
-            value = float(num1.get()) * float(num2.get())
-            res.set(self.makeAsItIs(value))
-        except:
-            self.errorMsg('error')
-
-    def div(self):
-        # checks if user is trying to divide by zero
-        if num2.get() == '0':
-            self.errorMsg('divisionerror')
-        elif num2.get() != '0':
-            try:
-                value = float(num1.get()) / float(num2.get())
-                res.set(self.makeAsItIs(value))
-            except:
-                self.errorMsg('error')
-
-    def makeAsItIs(self, value):
-        if (value == int(value)):
-            value = int(value)
-        return value
-
-def main():
-    root = Tk()
-    root.geometry("300x140")
-    app = App(root)
-    root.mainloop()
-
-if __name__ == '__main__':
-    main()
-'''
-
-
-'''
 import tkinter as tk
 
 root = tk.Tk()
@@ -392,6 +329,3 @@ tk.Button(child, text='=', width=button_width, height=button_height, command=res
 
 
 root.mainloop()
-
-
-'''
